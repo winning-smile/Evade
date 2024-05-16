@@ -1,0 +1,60 @@
+menuUSS {
+}
+
+.button {
+    align-items: center;
+    align-self: center;
+    width: 25%;
+    height: 15%;
+    top: 30%;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.play_button {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=-276195780&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_2");
+}
+
+.play_button:hover {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=74978215&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_3");
+}
+
+.exit_button {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=442853876&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_6");
+}
+
+.exit_button:hover {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Examples/Graphics/ui-large-buttons-horizontal.png?fileID=-4159960179397632525&guid=3316aabd5dd7e2743ad1214e35350560&type=3#ui-large-buttons-horizontal_7");
+}
+
+.settings_button {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=-892161282&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_28");
+}
+
+.settings_button:hover {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Examples/Graphics/ui-large-buttons-horizontal.png?fileID=3358023870026690476&guid=3316aabd5dd7e2743ad1214e35350560&type=3#ui-large-buttons-horizontal_28");
+}
+
+.continue_button {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=-32858696&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_4");
+}
+
+.continue_button:hover {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=-1185024330&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_5");
+}
+
+.retry_button {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=930350963&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_34");
+}
+
+.retry_button:hover {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=712126504&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_35");
+}
+
+.menu_button {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=-560674563&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_22");
+}
+
+.menu_button:hover {
+    background-image: url("project://database/Assets/Assets/OArielG/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png?fileID=1941482455&guid=3d2ceb4de2a713147abc06da178fec62&type=3#ui-large-buttons-horizontal_23");
+}

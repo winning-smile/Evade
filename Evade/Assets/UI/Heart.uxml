@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="heart" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/Warped%20Shooting%20Fx/Pixel%20Art/Hits/Hit-2/hits-2-3.png?fileID=2800000&amp;guid=2cae3ffcadd7e4f258bc2fbc12fab01b&amp;type=3#hits-2-3&quot;);" />
+</ui:UXML>

@@ -1,0 +1,6 @@
+.heart {
+    background-image: url("project://database/Assets/Assets/SunnyLand%20Artwork/Sprites/Items/cherry/cherry-2.png?fileID=2800000&guid=8582e97fa62334fbd8bd10c1052e27b8&type=3#cherry-2");
+    width: 1%;
+    height: 100%;
+    max-width: 20%;
+}
