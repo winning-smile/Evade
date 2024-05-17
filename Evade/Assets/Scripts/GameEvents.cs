@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.Events;
 
 public static class GameEvents {
@@ -18,10 +19,12 @@ public static class GameEvents {
     }
 
     public static void Die() {
+        Cursor.visible = !Cursor.visible;
         Killed.Invoke();
     }
 
     public static void SwitchPause() {
+        Cursor.visible = !Cursor.visible;
         _isPaused = !_isPaused;
 
         if (!_isPaused) {

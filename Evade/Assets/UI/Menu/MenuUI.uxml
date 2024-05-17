@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/menuUss.uss?fileID=7433441132597879392&amp;guid=1bd1a202964c1ad4794721b9ab524867&amp;type=3#menuUss" />
-    <ui:VisualElement name="Canvas" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/SunnyLand%20Artwork/Environment/back.png?fileID=21300000&amp;guid=8e160a2a620644cd6afef9119dad1093&amp;type=3#back&quot;);">
+    <ui:VisualElement name="Canvas" style="flex-grow: 1; background-image: none;">
         <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" enable-rich-text="true" class="button play_button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="button settings_button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="button exit_button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />

@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour {
     private static readonly int WallSlide = Animator.StringToHash("WallSlide");
 
     void Start() {
+        Cursor.visible = false;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerLayer = LayerMask.NameToLayer("Player");
