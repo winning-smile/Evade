@@ -1,19 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class EnemySpawner : MonoBehaviour {
-    private float spawnRate = 5f;
-    private bool canSpawn = true;
-    
+    private const float SpawnRate = 5f;
+    private readonly bool _canSpawn = true;
+
     [SerializeField]
     private GameObject[] enemyPrefabs;
 
     private IEnumerator Spawner() {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+        WaitForSeconds wait = new WaitForSeconds(SpawnRate);
 
-        while (canSpawn) {
+        while (_canSpawn) {
             yield return wait;
             var currentEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
             Instantiate(currentEnemy, transform.position, Quaternion.identity);

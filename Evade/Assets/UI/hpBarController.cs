@@ -1,19 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Serialization;
 
-public class hpBarController : MonoBehaviour {
-    public hpBarUI _HpBarUI;
-    
+public class HpBarController : MonoBehaviour {
+    [FormerlySerializedAs("_HpBarUI")]
+    public HpBarUI hpBarUI;
+
     private void OnValidate() {
-        if (!_HpBarUI) {
-            _HpBarUI = GetComponentInChildren<hpBarUI>();
+        if (!hpBarUI) {
+            hpBarUI = GetComponentInChildren<HpBarUI>();
         }
     }
-    private void OnEnable() {
-    }
-    
 }

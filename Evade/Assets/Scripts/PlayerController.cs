@@ -1,11 +1,13 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    private float _moveSpeed = 3f;
-    private float _jumpHeight = 8f;
+    private const float MoveSpeed = 3f;
+    private const float JumpHeight = 8f;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
-    bool _isGrounded;
+    private bool _isGrounded;
+    private bool _isSPressed;
 
     [SerializeField]
     private Transform _groundCheck;
@@ -15,6 +17,12 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     private Transform _groundCheck_r;
+
+    [SerializeField]
+    private Transform _wallCheck_r;
+
+    [SerializeField]
+    private Transform _wallCheck_l;
 
     [SerializeField]
     private LayerMask _groundLayerMask;
@@ -27,6 +35,13 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     private Animator _animator;
+    
+    [SerializeField]
+    private AudioSource _audioSource;
+    
+    [SerializeField]
+    private AudioClip StartClip;
+    
 
     private static readonly int AnimState = Animator.StringToHash("AnimState");
     private static readonly int Grounded = Animator.StringToHash("Grounded");
@@ -35,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 
     private int _playerLayer;
     private int _groundLayer;
+    private static readonly int WallSlide = Animator.StringToHash("WallSlide");
 
     void Start() {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -44,6 +60,9 @@ public class PlayerController : MonoBehaviour {
         GameEvents.Paused.AddListener(SetPause);
         GameEvents.Unpaused.AddListener(UnsetPause);
         GameEvents.Killed.AddListener(DisableControl);
+        
+        _audioSource.clip = StartClip;
+        _audioSource.Play();
     }
 
     void FixedUpdate() {
@@ -61,34 +80,43 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetKey("d")) {
+            if (Physics2D.Linecast(transform.position, _wallCheck_r.position, _groundLayerMask)) {
+                _animator.SetBool(WallSlide, true);
+                _spriteRenderer.flipX = false;
+            }
+
             _animator.SetInteger(AnimState, 1);
-            _rigidbody.velocity = new Vector2(_moveSpeed, _rigidbody.velocity.y);
+            _rigidbody.velocity = new Vector2(MoveSpeed, _rigidbody.velocity.y);
             _spriteRenderer.flipX = false;
         }
 
         if (Input.GetKey("a")) {
+            if (Physics2D.Linecast(transform.position, _wallCheck_l.position, _groundLayerMask)) {
+                _animator.SetBool(WallSlide, true);
+                _spriteRenderer.flipX = true;
+            }
+
             _animator.SetInteger(AnimState, 1);
-            _rigidbody.velocity = new Vector2(-_moveSpeed, _rigidbody.velocity.y);
+            _rigidbody.velocity = new Vector2(-MoveSpeed, _rigidbody.velocity.y);
             _spriteRenderer.flipX = true;
         }
 
         if (Input.GetKey("w") && _isGrounded) {
             _animator.SetTrigger(Jump);
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpHeight);
-        }
-
-        if (Input.GetKeyDown("s") && _isGrounded) {
-            Debug.Log("GOOOOOOOOOOOOOOOL");
-            _animator.SetFloat(AirSpeedY, -1);
-            Physics2D.IgnoreLayerCollision(_playerLayer, _groundLayer, true);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, JumpHeight);
         }
 
         if (_rigidbody.velocity.y > 0) {
             Physics2D.IgnoreLayerCollision(_playerLayer, _groundLayer, true);
-        } else if (_rigidbody.velocity.y < 0 && !Input.GetKeyDown("s")) {
+        } else if (_rigidbody.velocity.y < 0 && !_isSPressed) {
             _animator.SetFloat(AirSpeedY, -1);
             Physics2D.IgnoreLayerCollision(_playerLayer, _groundLayer, false);
         }
+    }
+
+    private IEnumerator DownCooldown() {
+        yield return new WaitForSeconds(0.5f);
+        _isSPressed = false;
     }
 
     private void SetPause() {
@@ -104,6 +132,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
+        if (Input.GetKeyDown("s") && _isGrounded) {
+            _animator.SetFloat(AirSpeedY, -1);
+            Physics2D.IgnoreLayerCollision(_playerLayer, _groundLayer, true);
+            _isSPressed = true;
+            StartCoroutine(DownCooldown());
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape)) {
             GameEvents.SwitchPause();
         }

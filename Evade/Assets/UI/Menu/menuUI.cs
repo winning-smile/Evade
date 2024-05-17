@@ -1,13 +1,12 @@
-using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class menuUI : UIElement {
+public class MenuUI : UIElement {
     private Button _playButton;
     private Button _quitButton;
-
+    
     private void OnEnable() {
         InitButtons();
     }

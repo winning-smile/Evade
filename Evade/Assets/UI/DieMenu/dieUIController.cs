@@ -1,13 +1,20 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
-public class dieUIController : MonoBehaviour
-{
-    public dieUI _dieUI;
-        
+public class DieUIController : MonoBehaviour {
+    [FormerlySerializedAs("_dieUI")]
+    public DieUI dieUI;
+    
+    [SerializeField]
+    private AudioSource _audioSource;
+    
+    [SerializeField]
+    private AudioClip DieMusic;
+
     private void OnValidate() {
-        if (!_dieUI) {
-            _dieUI = GetComponentInChildren<dieUI>();
+        if (!dieUI) {
+            dieUI = GetComponentInChildren<DieUI>();
         }
     }
 
@@ -16,7 +23,9 @@ public class dieUIController : MonoBehaviour
     }
 
     private void ShowUI() {
-        var menuUIDocument = _dieUI.GetComponent<UIDocument>();
+        var menuUIDocument = dieUI.GetComponent<UIDocument>();
         menuUIDocument.rootVisualElement.style.display = DisplayStyle.Flex;
+        _audioSource.clip = DieMusic;
+        _audioSource.Play();
     }
 }

@@ -231,7 +231,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Death
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -243,11 +243,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d2566ec8b252342449771d8abf45a00a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 28a7dd162c70bb044953a047ddabf012, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
-  m_CycleOffsetParameter: 
+  m_CycleOffsetParameter: AirSpeedY
   m_TimeParameter: 
 --- !u!1102 &110273628
 AnimatorState:
@@ -324,7 +324,7 @@ AnimatorStateMachine:
     m_Position: {x: 420, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110242590}
-    m_Position: {x: 648, y: 288, z: 0}
+    m_Position: {x: 770, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102940124560247288}
     m_Position: {x: 720, y: -60, z: 0}
@@ -333,7 +333,7 @@ AnimatorStateMachine:
     m_Position: {x: 132, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102418100664758852}
-    m_Position: {x: 420, y: 312, z: 0}
+    m_Position: {x: 410, y: 30, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 110121702}
@@ -344,8 +344,8 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 744, y: 108, z: 0}
-  m_EntryPosition: {x: -84, y: 108, z: 0}
-  m_ExitPosition: {x: 1020, y: 120, z: 0}
+  m_EntryPosition: {x: 20, y: 240, z: 0}
+  m_ExitPosition: {x: 810, y: 400, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 110215012}
 --- !u!206 &206747067957352452
@@ -597,7 +597,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5a35959702075e04f8f61c130192a2d3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3fc7158cfd2cb4b4fa39044df7dc88b1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

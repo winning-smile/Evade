@@ -23,7 +23,7 @@ public static class GameEvents {
 
     public static void SwitchPause() {
         _isPaused = !_isPaused;
-        
+
         if (!_isPaused) {
             Unpaused.Invoke();
         } else {

@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class dieUI : UIElement
-{
+public class DieUI : UIElement {
     private Button _retryButton;
     private Button _menuButton;
     private Button _quitButton;
@@ -27,7 +26,7 @@ public class dieUI : UIElement
     private void OnRetryButtonClicked(ClickEvent evt) {
         SceneManager.LoadScene("Game");
     }
-    
+
     private void OnMenuButtonClicked(ClickEvent evt) {
         SceneManager.LoadScene("Menu");
     }

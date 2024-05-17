@@ -4,17 +4,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 
-public class pauseUI : UIElement
-{
+public class PauseUI : UIElement {
     private Button _resumeButton;
     private Button _menuButton;
     private Button _quitButton;
-    
+
     private void OnEnable() {
         _root.style.display = DisplayStyle.None;
         InitButtons();
     }
-    
+
     private void InitButtons() {
         _resumeButton = _root.Q("ContinueButton") as Button;
         _menuButton = _root.Q("MenuButton") as Button;
@@ -24,11 +23,11 @@ public class pauseUI : UIElement
         _menuButton?.RegisterCallback<ClickEvent>(OnMenuButtonClicked);
         _quitButton?.RegisterCallback<ClickEvent>(OnQuitButtonClicked);
     }
-    
+
     private void OnResumeButtonClicked(ClickEvent evt) {
         GameEvents.SwitchPause();
     }
-    
+
     private void OnQuitButtonClicked(ClickEvent evt) {
         Application.Quit();
 #if UNITY_EDITOR

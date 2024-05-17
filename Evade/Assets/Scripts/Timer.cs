@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -19,7 +18,7 @@ public class TimerController : MonoBehaviour {
     private void StopCount() {
         _isAlive = false;
     }
-    
+
     private IEnumerator TimerCorutine() {
         while (_isAlive) {
             _elapsedTime += Time.deltaTime;
@@ -29,6 +28,7 @@ public class TimerController : MonoBehaviour {
             if (seconds > 5 && _diffId == 1) {
                 GameEvents.RaiseDiff();
             }
+
             yield return true;
         }
     }

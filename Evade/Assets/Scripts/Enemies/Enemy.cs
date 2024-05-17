@@ -1,20 +1,19 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     private SpriteRenderer _spriteRenderer;
-    private float lifeTime = 4f;
-    protected Vector3 _moveDirection;
-    
+    private const float LifeTime = 4f;
+    protected Vector3 MoveDirection;
+
     private void Start() {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
         if (transform.position.x > 0) {
             _spriteRenderer.flipX = true;
-            _moveDirection = Vector3.left;
+            MoveDirection = Vector3.left;
         } else {
-            _moveDirection = Vector3.right;
+            MoveDirection = Vector3.right;
         }
 
         StartCoroutine(LifeCycle());
@@ -34,9 +33,8 @@ public class Enemy : MonoBehaviour {
     }
 
     private IEnumerator LifeCycle() {
-        WaitForSeconds wait = new WaitForSeconds(lifeTime);
+        WaitForSeconds wait = new WaitForSeconds(LifeTime);
         yield return wait;
         Destroy(gameObject);
     }
-    
 }

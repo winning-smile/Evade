@@ -1,15 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PauseUIController : MonoBehaviour {
-    public pauseUI _PauseUI;
+    public PauseUI _PauseUI;
 
     private void OnValidate() {
         if (!_PauseUI) {
-            _PauseUI = GetComponentInChildren<pauseUI>();
+            _PauseUI = GetComponentInChildren<PauseUI>();
         }
     }
 
